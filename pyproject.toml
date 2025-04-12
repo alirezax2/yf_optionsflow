@@ -1,0 +1,14 @@
+[project]
+name = "yf-optionsflow"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "datasets>=3.5.0",
+    "pandas>=2.2.3",
+    "python-dotenv>=1.1.0",
+    "scipy>=1.15.2",
+    "xmltodict>=0.14.2",
+    "yfinance>=0.2.55",
+]

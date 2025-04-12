@@ -1,0 +1,60 @@
+name: YfOptions Crawling Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs at every minute
+    # - cron: "*/1 * * * *"
+    # Runs at every day
+    - cron: "0 0 * * *"
+
+jobs:
+  generate-YfOptions-csv-and-commit:
+    runs-on: ubuntu-latest
+    permissions: # Job-level permissions configuration starts here
+      contents: write # 'write' access to repository contents
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12" # Install the Python version needed
+
+      # Step 3: Install dependencies
+      - name: Install python libs
+        run: pip install .
+        # run: pip install -r requirements.txt
+
+      # Step 4: Execute the Python script to create a CSV
+      - name: Generate CSV
+        env:
+          HF_TOKEN_YfOptions: ${{ secrets.HF_TOKEN_YfOptions }}
+          dataset_name_YfOptions_output: ${{ secrets.dataset_name_YfOptions_output }}
+          dataset_name_TradingView_input: ${{ secrets.dataset_name_TradingView_input }}
+        run: python main.py
+
+      # # Step 5: Get current timestamp     
+      # - name: Get current timestamp
+      #   run: echo "TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+
+      # # Step 6: Commit and push the generated CSV file if there are changes
+      # - name: Commit files
+      #   run: |
+      #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #     git config --local user.name "github-actions[bot]"
+      #     git add optionchains/*
+      #     git commit -m "Add CSV files - $TIMESTAMP"
+      #     git push
+      # # - name: Push changes
+      # #   uses: ad-m/github-push-action@master
+      # #   with:
+      # #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      # #     branch: ${{ github.ref }}
+      # #     directory: .
+      # #     force: true
