@@ -70,10 +70,10 @@ print(option_chain_data_combined.head())
 end_time = time.time()
 print(f"Execution time: {end_time - start_time} seconds")
 # Save the combined option chain data to a CSV file
-option_chain_data_combined.to_csv(os.path.join(outputfolder,'option_chain_data_combined.csv'), index=False)
+option_chain_data_combined.to_csv(os.path.join(outputfolder,'optionchain.csv'), index=False)
 
-file_path = fr'{outputfolder}/{outputfolder}_{current_datetime}.csv'
-latest_file_path = fr'{outputfolder}/{outputfolder}.csv'
+file_path = fr'{outputfolder}/optionchain_{current_datetime}.csv'
+latest_file_path = fr'{outputfolder}/optionchain.csv'
 
 option_chain_data_combined.to_csv(file_path,index=False)
 option_chain_data_combined.to_csv(latest_file_path,index=False)
