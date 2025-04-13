@@ -28,8 +28,10 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install python libs
-        run: pip install .
-        # run: pip install -r requirements.txt
+        # run: pip install .
+        run: |
+          pip install -r requirements.txt
+          pip install --upgrade yfinance
 
       # Step 4: Execute the Python script to create a CSV
       - name: Generate CSV

@@ -42,7 +42,7 @@ DF = load_hf_dataset("america.csv", HF_TOKEN_YfOptions, dataset_name_TradingView
 
 # get ticker list by filtering only above 1 billion dollar company
 # DF = pd.read_csv(f'america_2024-03-01.csv')
-tickerlst  = list(DF.query('`Market Capitalization`>1e9').Ticker)
+tickerlst  = list(DF.query('`Market Capitalization`>100e9').Ticker)
 # tickerlist = ['INDO', 'TSLA', 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NFLX', 'META', 'NVDA', 'AMD', 'INTC', 'IBM', 'CSCO', 'ORCL', 'QCOM', 'TXN', 'AVGO', 'ADBE', 'CRM', 'NFLX', 'PYPL', 'SNAP']
 
 #measure runtime
