@@ -31,7 +31,7 @@ jobs:
         # run: pip install .
         run: |
           pip install -r requirements.txt
-          pip install --upgrade yfinance
+          pip install --upgrade yfinance --no-cache-dir
 
       # Step 4: Execute the Python script to create a CSV
       - name: Generate CSV

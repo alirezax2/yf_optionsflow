@@ -50,7 +50,7 @@ start_time = time.time()
 
 option_chain_data_lst = []
 for ticker in tickerlst:
-
+    time.sleep(2)  # Pause for 2 seconds between requests
     try:
         # Get the option chain data
         option_chain_data = get_DF_optionchain(ticker)
