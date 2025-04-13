@@ -23,7 +23,6 @@ if not os.path.exists(outputfolder):
     os.makedirs(outputfolder)
 
 
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -50,6 +49,8 @@ start_time = time.time()
 
 option_chain_data_lst = []
 for ticker in tickerlst:
+    if '/' in ticker:
+        pass	
     time.sleep(2)  # Pause for 2 seconds between requests
     try:
         # Get the option chain data
@@ -81,6 +82,5 @@ option_chain_data_combined.to_csv(latest_file_path,index=False)
 # Upload each file to the dataset
 upload_to_hf_dataset(file_path, dataset_name_YfOptions_output, HF_TOKEN_YfOptions, repo_type="dataset")
 upload_to_hf_dataset(latest_file_path, dataset_name_YfOptions_output, HF_TOKEN_YfOptions, repo_type="dataset")
-
 
 
