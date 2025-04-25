@@ -8,7 +8,7 @@ on:
     # Runs at every minute
     # - cron: "*/1 * * * *"
     # Runs at every day
-    - cron: "0 20 * * *"  # Runs at 20:00 UTC, which is 15:00 New York time
+    - cron: "0 18 * * *"  # cron job is scheduled to run at 18:00 UTC, it will execute at 2:00 PM in New York time.
 
 jobs:
   generate-YfOptions-csv-and-commit:
