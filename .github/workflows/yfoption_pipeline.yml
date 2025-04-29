@@ -8,6 +8,7 @@ on:
     # Runs at every minute
     # - cron: "*/1 * * * *"
     # Runs at every day
+    - cron: "0 14 * * *"  # cron job is scheduled to run at 14:00 UTC, it will execute at 10:00 AM in New York time.
     - cron: "0 18 * * *"  # cron job is scheduled to run at 18:00 UTC, it will execute at 2:00 PM in New York time.
 
 jobs:
