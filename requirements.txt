@@ -79,6 +79,8 @@ propcache==0.3.1
     # via
     #   aiohttp
     #   yarl
+protobuf==5.29.4
+    # via yfinance
 pyarrow==19.0.1
     # via datasets
 pycparser==2.22
@@ -119,11 +121,13 @@ tzdata==2025.2
     # via pandas
 urllib3==2.4.0
     # via requests
+websockets==15.0.1
+    # via yfinance
 xmltodict==0.14.2
     # via yf-optionsflow (pyproject.toml)
 xxhash==3.5.0
     # via datasets
 yarl==1.19.0
     # via aiohttp
-yfinance==0.2.58
+yfinance==0.2.59
     # via yf-optionsflow (pyproject.toml)
