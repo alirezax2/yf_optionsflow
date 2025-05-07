@@ -13,9 +13,15 @@ attrs==25.3.0
 beautifulsoup4==4.13.3
     # via yfinance
 certifi==2025.1.31
-    # via requests
+    # via
+    #   curl-cffi
+    #   requests
+cffi==1.17.1
+    # via curl-cffi
 charset-normalizer==3.4.1
     # via requests
+curl-cffi==0.10.0
+    # via yfinance
 datasets==3.5.0
     # via yf-optionsflow (pyproject.toml)
 dill==0.3.8
@@ -75,6 +81,8 @@ propcache==0.3.1
     #   yarl
 pyarrow==19.0.1
     # via datasets
+pycparser==2.22
+    # via cffi
 python-dateutil==2.9.0.post0
     # via pandas
 python-dotenv==1.1.0
@@ -117,5 +125,5 @@ xxhash==3.5.0
     # via datasets
 yarl==1.19.0
     # via aiohttp
-yfinance==0.2.55
+yfinance==0.2.58
     # via yf-optionsflow (pyproject.toml)
