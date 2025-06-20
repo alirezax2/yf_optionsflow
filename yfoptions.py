@@ -17,7 +17,7 @@ def get_DF_optionchain(ticker):
     import requests
     print(ticker)
     session = requests.Session()
-    tkobj = yf.Ticker(ticker, session=session)
+    tkobj = yf.Ticker(ticker) #, session=session)
     exps = tkobj.options
 
     if not exps:
