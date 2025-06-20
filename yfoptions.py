@@ -26,7 +26,7 @@ def get_DF_optionchain(ticker):
         return None
 
     # Current Price in Market Session
-    lastprice = tkobj.info["currentPrice"]
+    lastprice = 1 #tkobj.info["currentPrice"]
 
     # base price for additional column
     # bias_price = 'mark'
