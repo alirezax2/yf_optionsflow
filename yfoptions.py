@@ -15,9 +15,9 @@ def daysleft(inputdate):
 # get All Option Chain for a ticker, calculate additional columns and retun as a dataframe from Yahoo finance
 def get_DF_optionchain(ticker):
     import requests
-
+    print(ticker)
     session = requests.Session()
-    tkobj = yf.Ticker(ticker) #, session=session)
+    tkobj = yf.Ticker(ticker, session=session)
     exps = tkobj.options
 
     if not exps:
